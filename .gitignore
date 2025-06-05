@@ -1,0 +1,22 @@
+# Ignorer les dépendances
+node_modules/
+
+# Ignorer le dossier de build
+dist/
+
+# Ignorer les fichiers système ou environnement
+.DS_Store
+.env
+*.log
+
+# Ignorer les fichiers de l'éditeur
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorer les fichiers de lock si tu ne veux pas les partager
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
