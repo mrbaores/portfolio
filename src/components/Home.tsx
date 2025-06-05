@@ -26,13 +26,23 @@ const Home: React.FC<HomeProps> = ({ id }) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-             Mohamed bouremani
+          <h1 className="text-4xl md:text-6xl font-bold mb-4"> M.Bouremani
             <span className="inline-block ml-2 animate-wave">👋</span>
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
             Étudiant en informatique
           </h2>
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6">
+            RECHERCHE ALTERNANCE EN DÉVELOPPEMENT INFORMATIQUE<br />
+            Je suis actuellement à la recherche d’un contrat d’apprentissage en
+            développement informatique pour une durée de 2 ans.<br />
+            Lieu : Île-de-France<br />
+            Période : Septembre 2025 à Août 2027<br />
+            Durée : 24 mois<br />
+            Rythme d’alternance :<br />
+            - 1ère année : 2 jours en entreprise (lundi et mardi)<br />
+            - 2ème année : 3 jours en entreprise (mercredi, jeudi et vendredi)
+          </p>
           <div className="flex justify-center gap-4 mb-8">
             <a href="#" className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
               <Github size={24} />
