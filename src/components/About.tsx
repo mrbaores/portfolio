@@ -24,16 +24,14 @@ const About: React.FC<AboutProps> = ({ id }) => {
         
         <div className="max-w-4xl mx-auto">
           <div className={`mb-12 ${isVisible ? 'animate-fade-in animate-delay-100' : 'opacity-0'}`}>
-            <h3 className="text-2xl font-bold mb-4">Biographie</h3>
+            <h3 className="text-2xl font-bold mb-4">Presentation</h3>
             <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
               <p className="mb-4">
                 Passionné d'informatique depuis mon plus jeune âge, je suis actuellement étudiant en but informatique  
                 à l’IUT d’Orsay , Université de Paris-Saclay.
               </p>
               <p className="mb-4">
-                Je me spécialise dans le domaine de la data et ia , avec une 
-                attention particulière portée à l'expérience utilisateur et à la performance. Mon approche 
-                combine créativité et rigueur technique pour concevoir des solutions innovantes.
+                À l’avenir, je souhaite me spécialiser davantage dans le domaine de la data et ia , et intégrer une entreprise en alternance afin d’acquérir une expérience concrète et approfondie du métier. 
               </p>
               <p>
                 En dehors de mes études, je contribue activement à des projets open-source et j'essaye d apprendre 

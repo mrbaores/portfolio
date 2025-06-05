@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import photoMohamed from '../asset/photo-mohamed.jpg';
 
 interface HomeProps {
   id: string;
@@ -20,8 +21,8 @@ const Home: React.FC<HomeProps> = ({ id }) => {
         <div className="mb-8">
           <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-500 mb-6 shadow-lg">
             <img
-              src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Photo professionnelle"
+               src={photoMohamed}
+               alt="Photo de Mohamed"
               className="w-full h-full object-cover"
             />
           </div>
