@@ -1,4 +1,5 @@
 import { Project, Skill, Education } from '../types';
+import imgJeuVideo from '../asset/jeu.jpg';
 
 export const projects: Project[] = [
   {
@@ -16,7 +17,7 @@ export const projects: Project[] = [
     title: 'Développement Jeu Vidéo',
     description:
       "Concevoir un jeu 2D intégrant la gestion des personnages, des ennemis et des collisions en c++ , Nous avons appris à gérer les entités, les collisions, et vu l’importance des mathématiques dans les jeux.",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: imgJeuVideo,
     tags: ['C++', 'POO', 'Jeux', 'iA','CodeBlocks'],
     demoUrl: 'https://example.com/demo2',
     codeUrl: 'https://github.com/example/project2',
@@ -75,7 +76,7 @@ export const education: Education[] = [
     location: "Bagneux, France",
     startDate: "2021",
     endDate: "2024",
-    description: "Option Mathématiques et physique-chimie. "
+    description: "Option Mathématiques et physique-chimie."
   },
   {
     id: 'edu-1',
