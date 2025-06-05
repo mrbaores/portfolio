@@ -32,17 +32,19 @@ const Home: React.FC<HomeProps> = ({ id }) => {
           <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
             Étudiant en informatique
           </h2>
-          <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6">
-            RECHERCHE ALTERNANCE EN DÉVELOPPEMENT INFORMATIQUE<br />
-            Je suis actuellement à la recherche d’un contrat d’apprentissage en
-            développement informatique pour une durée de 2 ans.<br />
-            Lieu : Île-de-France<br />
-            Période : Septembre 2025 à Août 2027<br />
-            Durée : 24 mois<br />
-            Rythme d’alternance :<br />
-            - 1ère année : 2 jours en entreprise (lundi et mardi)<br />
-            - 2ème année : 3 jours en entreprise (mercredi, jeudi et vendredi)
-          </p>
+          <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg max-w-2xl mx-auto mb-6 border border-gray-200 dark:border-gray-700">
+          <h3 className="text-xl font-semibold text-blue-600 mb-2 text-center">
+             💼 Alternance dans le domaine de la Data
+              </h3>
+            <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed text-center">
+             <strong>📍 Lieu :</strong> Île-de-France<br />
+            <strong>🗓️ Période :</strong> Septembre 2025 → Août 2027 (24 mois)<br />
+            <strong>🏢 Rythme :</strong><br />
+            • 1ère année : <em>2 jours entreprise</em> (lundi & mardi)<br />
+            • 2e année : <em>3 jours entreprise</em> (mercredi → vendredi)<br />
+            </p>
+          </div>
+
           <div className="flex justify-center gap-4 mb-8">
             <a href="#" className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
               <Github size={24} />
