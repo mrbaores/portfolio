@@ -27,19 +27,17 @@ const About: React.FC<AboutProps> = ({ id }) => {
             <h3 className="text-2xl font-bold mb-4">Biographie</h3>
             <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
               <p className="mb-4">
-                Passionné d'informatique depuis mon plus jeune âge, je suis actuellement étudiant en Master 
-                d'Informatique à l'Université de Paris-Saclay. Mon parcours académique m'a permis de développer 
-                une solide expertise en développement web et en science des données.
+                Passionné d'informatique depuis mon plus jeune âge, je suis actuellement étudiant en but informatique  
+                à l’IUT d’Orsay , Université de Paris-Saclay.
               </p>
               <p className="mb-4">
-                Je me spécialise dans la création d'applications web modernes et responsives, avec une 
+                Je me spécialise dans le domaine de la data et ia , avec une 
                 attention particulière portée à l'expérience utilisateur et à la performance. Mon approche 
                 combine créativité et rigueur technique pour concevoir des solutions innovantes.
               </p>
               <p>
-                En dehors de mes études, je contribue activement à des projets open-source et participe 
-                régulièrement à des hackathons pour élargir mes compétences et rester à la pointe des 
-                nouvelles technologies.
+                En dehors de mes études, je contribue activement à des projets open-source et j'essaye d apprendre 
+                pour élargir mes compétences dans le domaine de la data et rester à la pointe des nouvelles technologies.
               </p>
             </div>
           </div>

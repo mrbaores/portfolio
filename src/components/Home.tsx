@@ -26,11 +26,11 @@ const Home: React.FC<HomeProps> = ({ id }) => {
             />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Thomas Dupont
+             Mohamed bouremani
             <span className="inline-block ml-2 animate-wave">👋</span>
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
-            Étudiant en informatique & développeur web
+            Étudiant en informatique
           </h2>
           <div className="flex justify-center gap-4 mb-8">
             <a href="#" className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
