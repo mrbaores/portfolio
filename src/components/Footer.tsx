@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="flex items-center justify-center">
-            © {currentYear} M.Bouremani. Tous droits réservés. Créé avec <Heart size={16} className="mx-1 text-red-500" /> en React & Tailwind à l'aide de codex.
+            © {currentYear} Mohamed.Bouremani. Tous droits réservés. Créé avec <Heart size={16} className="mx-1 text-red-500" /> en React & Tailwind à l'aide de codex.
           </p>
         </div>
       </div>
