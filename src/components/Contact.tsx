@@ -49,28 +49,51 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
     return Object.keys(newErrors).length === 0;
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (validateForm()) {
       setIsSubmitting(true);
-      
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
+      setSubmitStatus('idle');
+
+      try {
+        const response = await fetch('https://formspree.io/f/xwpbjoqe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+          }),
         });
-        
-        // Reset form status after 5 seconds
-        setTimeout(() => {
-          setSubmitStatus('idle');
-        }, 5000);
-      }, 1500);
+
+        if (response.ok) {
+          setSubmitStatus('success');
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+          });
+        } else {
+          setSubmitStatus('error');
+          console.error('Erreur lors de l’envoi');
+        }
+      } catch (error) {
+        setSubmitStatus('error');
+        console.error('Erreur réseau :', error);
+      }
+
+      setIsSubmitting(false);
+
+      // Reset form status after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
     }
   };
   
@@ -109,14 +132,19 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
             {submitStatus === 'success' ? (
               <div className="text-center p-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-500 mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg\" fill="none\" viewBox="0 0 24 24\" stroke="currentColor\" className="w-8 h-8">
-                    <path strokeLinecap="round\" strokeLinejoin="round\" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Message envoyé !</h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   Merci pour votre message. Je vous répondrai dans les plus brefs délais.
                 </p>
+              </div>
+            ) : submitStatus === 'error' ? (
+              <div className="text-center p-6 text-red-500">
+                <h3 className="text-xl font-semibold mb-2">Erreur d'envoi</h3>
+                <p>Une erreur est survenue. Veuillez réessayer plus tard.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
