@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react'; // Ajouter useEffect ici
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Projects from './components/Projects';
@@ -8,9 +8,23 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Citation from './components/Citation'; // Import du composant Citation
 import TicTacToe from './components/TicTacToe';
+import Loader from './components/Loader';
+
 import { useActiveSectionObserver } from './hooks/useActiveSectionObserver';
 
 function App() {
+  // State pour afficher/cacher le loader
+  const [loading, setLoading] = useState(true);
+
+  // State pour afficher/cacher le jeu (déclaré UNE seule fois)
+  const [showGame, setShowGame] = useState(false);
+
+  // Timer pour enlever le loader au bout de 2 secondes
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Create refs for each section
   const homeRef = useRef<HTMLElement>(null);
   const projetsRef = useRef<HTMLElement>(null);
@@ -30,13 +44,14 @@ function App() {
   const activeSection = useActiveSectionObserver(sections);
   const [activeSectionState, setActiveSectionState] = useState(activeSection);
 
-  // State pour afficher/cacher le jeu
-  const [showGame, setShowGame] = useState(false);
-
   // Update state when hook returns new active section
-  React.useEffect(() => {
+  useEffect(() => {
     setActiveSectionState(activeSection);
   }, [activeSection]);
+
+  if (loading) {
+    return <Loader />;  // Affiche le loader tant que loading = true
+  }
 
   return (
     <div className="font-sans relative">
@@ -46,12 +61,7 @@ function App() {
       />
       <main>
         <Home id="home" />
-        
-          
-  <Citation />
-
-
-       
+        <Citation />
         <Projects id="projets" />
         <Skills id="competences" />
         <About id="apropos" />
