@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'; // Ajouter useEffect ici
+import React, { useRef, useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Projects from './components/Projects';
@@ -6,7 +6,7 @@ import Skills from './components/Skills';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Citation from './components/Citation'; // Import du composant Citation
+import Citation from './components/Citation';
 import TicTacToe from './components/TicTacToe';
 import Loader from './components/Loader';
 
@@ -16,7 +16,7 @@ function App() {
   // State pour afficher/cacher le loader
   const [loading, setLoading] = useState(true);
 
-  // State pour afficher/cacher le jeu (déclaré UNE seule fois)
+  // State pour afficher/cacher le jeu
   const [showGame, setShowGame] = useState(false);
 
   // Timer pour enlever le loader au bout de 2 secondes
