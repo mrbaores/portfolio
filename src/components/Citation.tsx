@@ -17,11 +17,16 @@ const citations = [
 
 const Citation: React.FC = () => {
   const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex(prev => (prev + 1) % citations.length);
-    }, 7000); // change toutes les 7 secondes
+      setVisible(false); // démarre la disparition
+      setTimeout(() => {
+        setIndex(prev => (prev + 1) % citations.length);
+        setVisible(true); // réapparition avec la nouvelle citation
+      }, 500); // durée de la transition d'opacité (500ms)
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);
@@ -33,7 +38,10 @@ const Citation: React.FC = () => {
       <h3 className="mb-6 text-xl font-semibold text-gray-800 dark:text-gray-200">
         Citation inspirante
       </h3>
-      <blockquote className="relative max-w-xl mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md italic text-lg text-gray-700 dark:text-gray-300 border-l-4 border-indigo-500 transition-opacity duration-700 ease-in-out">
+      <blockquote
+        className={`relative max-w-xl mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md italic text-lg text-gray-700 dark:text-gray-300 border-l-4 border-indigo-500 transition-opacity duration-500 ease-in-out`}
+        style={{ opacity: visible ? 1 : 0 }}
+      >
         <p>&ldquo;{text}&rdquo;</p>
         <footer className="mt-4 text-sm font-semibold text-gray-600 dark:text-gray-400">
           — {author}
