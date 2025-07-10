@@ -43,6 +43,20 @@ export const projects: Project[] = [
     demoUrl: 'https://example.com/demo4',
     codeUrl: 'https://github.com/example/project4',
   },
+  {   id :'projet-5',
+    title:'configuration en linux de composants informatiques ',
+    description:'installation et configuration de serveur en linux , de facon peerene ou bien volatile ,Configuration des routeur',
+    image:raspi,
+    tags:['protocole',' ssh','dns','dhcp','UDP','TC/IP'],
+    demoUrl: 'https://example.com/demo4',
+    codeUrl: 'https://github.com/example/project4',
+
+
+
+
+
+
+  }
 ];
 
 export const skills: Skill[] = [
