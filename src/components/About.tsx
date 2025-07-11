@@ -36,6 +36,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
               <p>
                 En dehors de mes études, je contribue activement à des projets open-source et j'essaye d apprendre 
                 pour élargir mes compétences dans le domaine de la data et dans la cybersecurite et rester à la pointe des nouvelles technologies.
+              J’ai également eu l’opportunité de participer à des événements majeurs comme VivaTech, et j’ai obtenu plusieurs certifications (Microsoft, LinkedIn Learning) en développement .
               </p>
             </div>
           </div>
