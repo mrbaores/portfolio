@@ -16,7 +16,7 @@ const citations = [
   {
     text: "Les ordinateurs ne peuvent pas mentir. Mais les programmes peuvent, eux.",
     author: " inconnu "
-  }
+  },
   {
     text: "The best way to predict the future is to invent it.",
     author: " Alan Kay "
