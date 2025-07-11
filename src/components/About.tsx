@@ -35,10 +35,12 @@ const About: React.FC<AboutProps> = ({ id }) => {
               </p>
               <p>
                 En dehors de mes études, je contribue activement à des projets open-source et j'essaye d apprendre 
-                pour élargir mes compétences dans le domaine de la data et rester à la pointe des nouvelles technologies.
+                pour élargir mes compétences dans le domaine de la data et dans la cybersecurite et rester à la pointe des nouvelles technologies.
               </p>
             </div>
           </div>
+
+          
           
           <div className={isVisible ? 'animate-fade-in animate-delay-200' : 'opacity-0'}>
             <h3 className="text-2xl font-bold mb-4">Parcours Académique</h3>

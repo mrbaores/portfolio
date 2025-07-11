@@ -10,9 +10,18 @@ const citations = [
     author: "Steve Jobs"
   },
   {
-    text: "Ce qui ne nous tue pas nous rend plus fort.",
-    author: "Friedrich Nietzsche"
+    text: "Je ne cherche pas à être parfait, je cherche à progresser chaque jour, avec rigueur et passion.",
+    author: "Moi"
+  },
+  {
+    text: "Les ordinateurs ne peuvent pas mentir. Mais les programmes peuvent, eux.",
+    author: " inconnu "
   }
+  {
+    text: "The best way to predict the future is to invent it.",
+    author: " Alan Kay "
+  }
+
 ];
 
 const Citation: React.FC = () => {

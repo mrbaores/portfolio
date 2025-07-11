@@ -2,7 +2,8 @@ import { Project, Skill, Education } from '../types';
 import imgJeuVideo from '../asset/jeu.jpg';
 import ACMOTORS from '../asset/A-C-MOTORS.jpg';
 import raspi from '../asset/pi.jpg';
-
+import lunnix from '../asset/linux.jpg';
+import igbd from '../asset/igdb.jpg';
 
 export const projects: Project[] = [
   {
@@ -40,33 +41,39 @@ export const projects: Project[] = [
     description:"Installation et configuration d’un poste sur Raspberry Pi avec système d’exploitation, SQL, Python et packages adaptés, renforçant mes compétences en systèmes embarqués et outils techniques.",
     image:raspi,
     tags: ['linux', 'mariadb', 'sql', 'protocole ssh'],
-    demoUrl: 'https://example.com/demo4',
+    demoUrl: 'https://www.lri.fr/~zema/S103/S103.html',
     codeUrl: 'https://github.com/example/project4',
   },
   {   id :'projet-5',
     title:'configuration en linux de composants informatiques ',
-    description:'installation et configuration de serveur en linux , de facon peerene ou bien volatile ,Configuration des routeur',
-    image:raspi,
+    description:'installation et la configuration d’un serveur Linux, en mode persistant ou volatile selon les besoins, ainsi que la mise en place complète de l’infrastructure réseau. Cela inclut la configuration des routeurs, des interfaces réseau (adresses IP, passerelles, routes statiques), l’implémentation d’un serveur DHCP pour l’attribution dynamique des adresses IP, d’un serveur DNS pour la résolution des noms de domaine internes, et d’un serveur Web Apache pour l’hébergement des sites d’équipe. J’ai également mis en place des connexions SSH sécurisées par clés, configuré le routage inter-sous-réseaux et vers Internet, et vérifié la connectivité complète entre toutes les machines du réseau.',
+    image: lunnix,
     tags:['protocole',' ssh','dns','dhcp','UDP','TC/IP'],
     demoUrl: 'https://example.com/demo4',
-    codeUrl: 'https://github.com/example/project4',
+    codeUrl: 'https://github.com/mrbaores/S203-RESAUX',
+  },
+  {
+    id:'projet-6',
+    title:'Exploitation de Base de Données ',
+    description:'Projet portant sur l exploitation dune base de données inspirée du site IGDB.  Le projet se divise en deux volets complémentaires : Gestion de la base de données : conception, modélisation, alimentation et interrogation de la base à l’aide du langage SQL et de requêtes PL/SQL. Analyse statistique et tableau de bord : utilisation de Jupyter Notebook avec Python, pandas, matplotlib et d’autres bibliothèques de visualisation pour le traitement des données et la création de tableaux de bord interactifs permettant une analyse claire des tendances et des données issues de la base.',
+    image: igbd,
+    tags:['jupyter','python','SQL/PLSQL'],
+    demoUrl: 'https://example.com/demo4',
+    codeUrl: 'https://github.com/mrbaores/Projet-S104-Base-Donnee',
 
 
 
-
-
-
-  }
+  },
 ];
 
 export const skills: Skill[] = [
-  { name: 'HTML/CSS', level: 90, category: 'frontend', color: 'bg-orange-500' },
-  { name: 'JavaScript', level: 85, category: 'frontend', color: 'bg-yellow-500' },
+  { name: 'HTML', level: 90, category: 'frontend', color: 'bg-orange-500' },
+  { name: 'CSS', level: 85, category: 'frontend', color: 'bg-yellow-500' },
   { name: 'c++', level: 70, category: 'frontend', color: 'bg-blue-500' },
   { name: 'java', level: 60, category: 'frontend', color: 'bg-blue-600' },
   { name: 'Python', level: 70, category: 'backend', color: 'bg-blue-800' },
   { name: 'SQL', level: 75, category: 'backend', color: 'bg-blue-400' },
-  { name: 'MongoDB', level: 70, category: 'backend', color: 'bg-green-600' },
+  { name: 'Mariadb', level: 70, category: 'backend', color: 'bg-green-600' },
   { name: 'Git', level: 85, category: 'other', color: 'bg-orange-600' },
   { name: 'Figma', level: 70, category: 'other', color: 'bg-purple-500' },
   { name: 'Jupyter', level: 60, category: 'other', color: 'bg-purple-500'}

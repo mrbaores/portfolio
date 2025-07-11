@@ -34,7 +34,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
           </h2>
           <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg max-w-2xl mx-auto mb-6 border border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-blue-600 mb-2 text-center">
-             💼 Alternance dans le domaine de la Data
+             💼 Alternance dans le domaine de la Data/IA
               </h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed text-center">
              <strong>📍 Lieu :</strong> Île-de-France<br />
