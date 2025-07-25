@@ -16,7 +16,9 @@ const Skills: React.FC<SkillsProps> = ({ id }) => {
     { id: 'all', name: 'Toutes' },
     { id: 'frontend', name: 'Frontend' },
     { id: 'backend', name: 'Backend' },
-    { id: 'other', name: 'Autres' }
+    { id: 'other', name: 'Autres' 
+    },
+    {id:'electronique', name:'electronique'}
   ];
   
   // Filter skills based on category

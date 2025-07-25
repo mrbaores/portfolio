@@ -1,3 +1,4 @@
+import { ArrowBigDown } from 'lucide-react';
 import React, { useState } from 'react';
 
 type Player = 'X' | 'O' | null;
@@ -41,6 +42,24 @@ export default function TicTacToe() {
       setTimeout(() => aiMove(newBoard), 800);
     }
   };
+   
+  
+  // Test une ia both  qui joue à 90 pourcent en logique    
+  const middleai = (currentBoard: Player[]) => {
+      const boardCopy=currentBoard.slice();
+      let moves;
+      if (Math.random()<0.9){
+        moves= findBestMove(boardCopy,'O');
+        }
+        
+          boardCopy[moves]='O';
+         setBoard(boardCopy); 
+         checkWinner(boardCopy); 
+
+
+  };
+  
+  
 
   const aiMove = (currentBoard: Player[]) => {
     const boardCopy = currentBoard.slice();
@@ -85,7 +104,15 @@ export default function TicTacToe() {
     setWinner(null);
     setWinningCombo(null);
   };
-
+  // constante qui permet de gagner le jeu 
+  
+  /*
+  const winngame=(){
+     setBoard(Array(9).fill(null));
+     setWinner(true);
+     setWinningCombo(false);
+    };
+**/
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4 text-center">Morpion</h2>
@@ -115,6 +142,12 @@ export default function TicTacToe() {
             className="mt-2 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition"
           >
             Rejouer
+          </button>
+
+          <button
+          onClick={winngame}
+          className='mt-2 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition'  >
+            changement
           </button>
         </div>
       )}

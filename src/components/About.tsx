@@ -46,7 +46,8 @@ const About: React.FC<AboutProps> = ({ id }) => {
           <div className={isVisible ? 'animate-fade-in animate-delay-200' : 'opacity-0'}>
             <h3 className="text-2xl font-bold mb-4">Parcours Académique</h3>
             <div className="timeline-container">
-              {education.map((edu, index) => (
+              {education.map((edu ) => (
+                
                 <div key={edu.id} className="timeline-item">
                   <div className="timeline-content bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md">
                     <h4 className="text-lg font-bold mb-1">{edu.degree}</h4>

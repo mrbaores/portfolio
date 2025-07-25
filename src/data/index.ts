@@ -4,6 +4,8 @@ import ACMOTORS from '../asset/A-C-MOTORS.jpg';
 import raspi from '../asset/pi.jpg';
 import lunnix from '../asset/linux.jpg';
 import igbd from '../asset/igdb.jpg';
+import domotique from '../asset/domotique.jpg';
+
 
 export const projects: Project[] = [
   {
@@ -49,7 +51,7 @@ export const projects: Project[] = [
     description:'installation et la configuration d’un serveur Linux, en mode persistant ou volatile selon les besoins, ainsi que la mise en place complète de l’infrastructure réseau. Cela inclut la configuration des routeurs, des interfaces réseau (adresses IP, passerelles, routes statiques), l’implémentation d’un serveur DHCP pour l’attribution dynamique des adresses IP, d’un serveur DNS pour la résolution des noms de domaine internes, et d’un serveur Web Apache pour l’hébergement des sites d’équipe. J’ai également mis en place des connexions SSH sécurisées par clés, configuré le routage inter-sous-réseaux et vers Internet, et vérifié la connectivité complète entre toutes les machines du réseau.',
     image: lunnix,
     tags:['protocole',' ssh','dns','dhcp','UDP','TC/IP'],
-    demoUrl: 'https://example.com/demo4',
+    demoUrl: '',
     codeUrl: 'https://github.com/mrbaores/S203-RESAUX',
   },
   {
@@ -58,12 +60,29 @@ export const projects: Project[] = [
     description:'Projet portant sur l exploitation dune base de données inspirée du site IGDB.  Le projet se divise en deux volets complémentaires : Gestion de la base de données : conception, modélisation, alimentation et interrogation de la base à l’aide du langage SQL et de requêtes PL/SQL. Analyse statistique et tableau de bord : utilisation de Jupyter Notebook avec Python, pandas, matplotlib et d’autres bibliothèques de visualisation pour le traitement des données et la création de tableaux de bord interactifs permettant une analyse claire des tendances et des données issues de la base.',
     image: igbd,
     tags:['jupyter','python','SQL/PLSQL'],
-    demoUrl: 'https://example.com/demo4',
+    demoUrl: '',
     codeUrl: 'https://github.com/mrbaores/Projet-S104-Base-Donnee',
-
-
-
+  
   },
+  { 
+    id:'projet-7',
+    title:'Electronique/informatique',
+    description:'configuration d une domotique complete à laide de Home Asistant, configuration à la aide protocole (Zigbe,wifi, MQtt), pour automatiser l eclarage , les capteurs et autres equipements informatque ',
+    image :domotique,
+    tags:['ioT','Zigbee','Node-RED', 'Securite-Iot'],
+    codeUrl:'https://github.com/mrbaores/Projet-Domotique-Personel',
+    demoUrl:'',
+
+}, 
+ {
+  id:'projet-8',
+  title:'Application de reconnaisance faciale (en cours)',
+  description:' Creation une application Python utilise MediaPipe et OpenCV pour permettre aux personnes en situation de handicap de composer des mots grâce aux mouvements de leur tête. Elle détecte un hochement pour sélectionner des lettres défilantes et utilise une synthèse vocale pour lire le mot final à haute voix.', 
+  image:'',
+  tags:['python','cv2','mediapipe', 'pytthx' ],
+  demoUrl: '',
+  codeUrl: 'https://github.com/mrbaores/reconnaissance-facial',
+}
 ];
 
 export const skills: Skill[] = [
@@ -76,13 +95,13 @@ export const skills: Skill[] = [
   { name: 'Mariadb', level: 70, category: 'backend', color: 'bg-green-600' },
   { name: 'Git', level: 85, category: 'other', color: 'bg-orange-600' },
   { name: 'Figma', level: 70, category: 'other', color: 'bg-purple-500' },
-  { name: 'Jupyter', level: 60, category: 'other', color: 'bg-purple-500'}
+  { name: 'Jupyter', level: 60, category: 'other', color: 'bg-purple-500'},
+  { name:'Iot automate ', level : 60 , category:'electronique',color:'bg-blue-600' },
 
 ];
 
 export const education: Education[] = [
-  
-  {
+   {
     id: 'edu-3',
     degree: " BUT en Informatique",
     institution: " iut Orsay , Université de Paris-Saclay",
