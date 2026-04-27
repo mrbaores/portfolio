@@ -96,7 +96,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
               <strong>📍 Lieu :</strong> Île-de-France<br />
               <strong>🗓️ Période :</strong> Septembre 2025 → Août 2027 (24 mois)<br />
               <strong>🏢 Rythme :</strong><br />
-              • 1ère année : <em>2 jours entreprise</em> (lundi &amp; mardi)<br />
+              • 1ère année : <em>2 jours entreprise</em> (lundi & mardi)<br />
               • 2e année : <em>3 jours entreprise</em> (mercredi → vendredi)<br />
             </p>
           </div>

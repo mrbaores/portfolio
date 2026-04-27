@@ -96,8 +96,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     ? project.description.slice(0, DESC_LIMIT).trimEnd() + '…'
     : project.description;
 
-  // A project is "featured" if it has no demoUrl that's a placeholder
-  // and is the first or second project (highest value for recruiter)
+  // A project is "featured" when its data entry has featured: true
   const isFeatured = project.featured === true;
 
   return (
