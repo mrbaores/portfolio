@@ -43,16 +43,16 @@ const Citation: React.FC = () => {
   const { text, author } = citations[index];
 
   return (
-    <section id="citation" className="container-section my-12 text-center">
+    <section id="citation" className="container-section my-0 text-center">
       <h3 className="mb-6 text-xl font-semibold text-gray-800 dark:text-gray-200">
-        Citation inspirante
+        ✨ Citation inspirante
       </h3>
       <blockquote
-        className={`relative max-w-xl mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md italic text-lg text-gray-700 dark:text-gray-300 border-l-4 border-indigo-500 transition-opacity duration-500 ease-in-out`}
-        style={{ opacity: visible ? 1 : 0 }}
+        className={`relative max-w-xl mx-auto bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-lg italic text-lg text-gray-700 dark:text-gray-300 border-l-4 transition-opacity duration-500 ease-in-out`}
+        style={{ opacity: visible ? 1 : 0, borderLeftColor: '#7c3aed' }}
       >
         <p>&ldquo;{text}&rdquo;</p>
-        <footer className="mt-4 text-sm font-semibold text-gray-600 dark:text-gray-400">
+        <footer className="mt-4 text-sm font-semibold gradient-text">
           — {author}
         </footer>
       </blockquote>

@@ -30,12 +30,13 @@ const Skills: React.FC<SkillsProps> = ({ id }) => {
     <section 
       id={id} 
       ref={sectionRef} 
-      className="bg-white dark:bg-gray-900"
+      className="bg-white dark:bg-slate-950"
     >
       <div className="container-section">
         <h2 className={`section-title ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           Compétences
         </h2>
+        <span className={`section-title-underline ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} />
         <p className={`section-subtitle ${isVisible ? 'animate-fade-in animate-delay-100' : 'opacity-0'}`}>
           Mes compétences techniques acquises au cours de ma formation et de mes projets.
         </p>
@@ -44,10 +45,10 @@ const Skills: React.FC<SkillsProps> = ({ id }) => {
           {categories.map(category => (
             <button
               key={category.id}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all
                 ${activeCategory === category.id 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'}`}
+                  ? 'bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md' 
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'}`}
               onClick={() => setActiveCategory(category.id)}
             >
               {category.name}

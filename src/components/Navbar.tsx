@@ -10,14 +10,14 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const { isDarkMode, toggleTheme } = useTheme();
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    setIsScrolled(scrollTop > 50);
+    setScrollProgress(docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -40,21 +40,28 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md py-2'
+          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-sm shadow-md shadow-violet-900/10 py-2'
           : 'bg-transparent py-4'
       }`}
     >
+      {/* Scroll progress bar */}
+      <div
+        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet-600 to-cyan-500 transition-all duration-100"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
+
       <div className="container-section py-0">
         <div className="flex justify-between items-center">
           <a 
             href="#home" 
-            className="text-xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+            className="text-xl font-bold gradient-text hover:opacity-80 transition-opacity"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('home');
             }}
           >
-            Portfolio
+            {'<MB />'}
           </a>
           
           {/* Mobile menu button */}
@@ -108,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
                 onClick={() => scrollToSection(section)}
                 className={`block w-full text-left px-3 py-2 rounded-md ${
                   activeSection === section 
-                    ? 'bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400' 
+                    ? 'bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 font-semibold' 
                     : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                 } transition-colors duration-200 animate-fade-in animate-delay-${index * 100}`}
               >

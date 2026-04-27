@@ -3,6 +3,8 @@ import { useState, useEffect, RefObject } from 'react';
 interface UseIntersectionObserverOptions {
   threshold?: number;
   rootMargin?: string;
+  /** If true, stays visible after the first intersection (no re-animation on scroll back) */
+  once?: boolean;
 }
 
 export const useIntersectionObserver = (
@@ -13,8 +15,15 @@ export const useIntersectionObserver = (
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+      ([entry], obs) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          if (options.once && entry.target) {
+            obs.unobserve(entry.target);
+          }
+        } else if (!options.once) {
+          setIsVisible(false);
+        }
       },
       {
         threshold: options.threshold || 0.1,
@@ -33,7 +42,7 @@ export const useIntersectionObserver = (
         observer.unobserve(element);
       }
     };
-  }, [elementRef, options.threshold, options.rootMargin]);
+  }, [elementRef, options.threshold, options.rootMargin, options.once]);
 
   return isVisible;
 };

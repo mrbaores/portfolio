@@ -6,12 +6,16 @@ export interface Project {
   tags: string[];
   demoUrl?: string;
   codeUrl?: string;
+  /** Show a "Projet phare" badge */
+  featured?: boolean;
+  /** Show an "En cours" badge */
+  inProgress?: boolean;
 }
 
 export interface Skill {
   name: string;
   level: number; // 0-100
-  category: 'frontend' | 'backend' | 'other';
+  category: 'frontend' | 'backend' | 'other' | 'electronique';
   color: string;
 }
 
