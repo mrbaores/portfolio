@@ -10,14 +10,14 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const { isDarkMode, toggleTheme } = useTheme();
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    setIsScrolled(scrollTop > 50);
+    setScrollProgress(docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -44,6 +44,13 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
           : 'bg-transparent py-4'
       }`}
     >
+      {/* Scroll progress bar */}
+      <div
+        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet-600 to-cyan-500 transition-all duration-100"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
+
       <div className="container-section py-0">
         <div className="flex justify-between items-center">
           <a 
