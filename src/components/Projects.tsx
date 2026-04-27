@@ -28,22 +28,23 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
     <section 
       id={id} 
       ref={sectionRef} 
-      className="bg-gray-100 dark:bg-gray-800"
+      className="bg-gray-100/80 dark:bg-slate-900"
     >
       <div className="container-section">
         <h2 className={`section-title ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           Mes Projets
         </h2>
+        <span className={`section-title-underline ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} />
         <p className={`section-subtitle ${isVisible ? 'animate-fade-in animate-delay-100' : 'opacity-0'}`}>
           Découvrez une sélection de mes projets les plus significatifs en développement web et applications.
         </p>
         
         <div className={`flex flex-wrap justify-center gap-2 mb-10 ${isVisible ? 'animate-fade-in animate-delay-200' : 'opacity-0'}`}>
           <button
-            className={`px-3 py-1 rounded-full text-sm font-medium transition-colors
+            className={`px-3 py-1 rounded-full text-sm font-medium transition-all
               ${filter === 'all' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'}`}
+                ? 'bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'}`}
             onClick={() => setFilter('all')}
           >
             Tous
@@ -52,10 +53,10 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
           {allTags.map(tag => (
             <button
               key={tag}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors
+              className={`px-3 py-1 rounded-full text-sm font-medium transition-all
                 ${filter === tag 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'}`}
+                  ? 'bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md' 
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'}`}
               onClick={() => setFilter(tag)}
             >
               {tag}
@@ -87,26 +88,32 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, isVisible, delay }) => {
   return (
     <div 
-      className={`project-card rounded-lg overflow-hidden bg-white dark:bg-gray-900 shadow-md 
+      className={`project-card rounded-xl overflow-hidden bg-white dark:bg-slate-900 shadow-md 
         ${isVisible ? `animate-fade-in animate-delay-${delay}` : 'opacity-0'}`}
     >
-      <div className="h-48 overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-        />
+      <div className="h-48 overflow-hidden relative">
+        {project.image ? (
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-violet-600/20 to-cyan-500/20 flex items-center justify-center" role="img" aria-label="Image du projet non disponible">
+            <span aria-hidden="true" className="text-4xl">🚀</span>
+          </div>
+        )}
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
+        <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map(tag => (
             <span 
               key={`${project.id}-${tag}`} 
-              className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs font-medium rounded"
+              className="px-2 py-1 bg-violet-50 dark:bg-violet-900/20 text-violet-700 dark:text-violet-300 text-xs font-medium rounded-full border border-violet-200/50 dark:border-violet-700/30"
             >
               {tag}
             </span>

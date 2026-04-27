@@ -15,10 +15,10 @@ const Loader: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 flex flex-col justify-center items-center bg-white dark:bg-gray-900 z-50">
+    <div className="fixed inset-0 flex flex-col justify-center items-center bg-white dark:bg-slate-950 z-50">
       {/* Cercle qui tourne */}
       <svg
-        className="animate-spin -ml-1 mr-3 h-20 w-20 text-indigo-600 dark:text-indigo-400"
+        className="animate-spin -ml-1 mr-3 h-20 w-20 text-violet-600 dark:text-violet-400"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ const Loader: React.FC = () => {
       </svg>
 
       {/* Texte machine à écrire */}
-      <p className="mt-6 text-indigo-600 dark:text-indigo-400 text-lg font-mono tracking-widest select-none">
+      <p className="mt-6 text-violet-600 dark:text-violet-400 text-lg font-mono tracking-widest select-none">
         {displayedText}
         <span className="blink">|</span>
       </p>

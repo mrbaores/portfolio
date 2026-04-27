@@ -117,18 +117,19 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
     <section 
       id={id}
       ref={sectionRef}
-      className="bg-white dark:bg-gray-900"
+      className="bg-white dark:bg-slate-950"
     >
       <div className="container-section">
         <h2 className={`section-title ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           Contact
         </h2>
+        <span className={`section-title-underline ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} />
         <p className={`section-subtitle ${isVisible ? 'animate-fade-in animate-delay-100' : 'opacity-0'}`}>
           Vous avez un projet en tête ou une opportunité à me proposer ? N'hésitez pas à me contacter !
         </p>
         
         <div className="max-w-2xl mx-auto">
-          <div className={`bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 ${isVisible ? 'animate-fade-in animate-delay-200' : 'opacity-0'}`}>
+          <div className={`bg-gray-50 dark:bg-slate-900 rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200 dark:border-slate-800 ${isVisible ? 'animate-fade-in animate-delay-200' : 'opacity-0'}`}>
             {submitStatus === 'success' ? (
               <div className="text-center p-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-500 mb-4">

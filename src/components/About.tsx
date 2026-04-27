@@ -15,12 +15,13 @@ const About: React.FC<AboutProps> = ({ id }) => {
     <section 
       id={id}
       ref={sectionRef} 
-      className="bg-gray-50 dark:bg-gray-800"
+      className="bg-gray-50 dark:bg-slate-900"
     >
       <div className="container-section">
         <h2 className={`section-title ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           À Propos de Moi
         </h2>
+        <span className={`section-title-underline ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} />
         
         <div className="max-w-4xl mx-auto">
           <div className={`mb-12 ${isVisible ? 'animate-fade-in animate-delay-100' : 'opacity-0'}`}>

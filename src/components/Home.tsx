@@ -15,27 +15,30 @@ const Home: React.FC<HomeProps> = ({ id }) => {
     <section 
       id={id}
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center relative"
+      className="min-h-screen flex items-center justify-center relative hero-bg"
     >
       <div className={`container-section text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         <div className="mb-8">
-          <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-500 mb-6 shadow-lg">
-            <img
-               src={photoMohamed}
-               alt="Photo de Mohamed"
-              className="w-full h-full object-cover"
-            />
+          <div className="animate-float mx-auto w-40 h-40 gradient-ring mb-6 shadow-2xl shadow-violet-500/20">
+            <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-slate-950">
+              <img
+                 src={photoMohamed}
+                 alt="Photo de Mohamed Adem Bouremani"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4"> M.Bouremani
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <span className="gradient-text">M.Bouremani</span>
             <span className="inline-block ml-2 animate-wave">👋</span>
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
             Étudiant en informatique
           </h2>
-          <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg max-w-2xl mx-auto mb-6 border border-gray-200 dark:border-gray-700">
-          <h3 className="text-xl font-semibold text-blue-600 mb-2 text-center">
-             💼 Alternance dans le domaine de la Data/IA
-              </h3>
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl max-w-2xl mx-auto mb-6 border border-violet-200/50 dark:border-violet-800/30">
+            <h3 className="text-xl font-semibold mb-2 text-center gradient-text">
+              💼 Alternance dans le domaine de la Data/IA
+            </h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed text-center">
              <strong>📍 Lieu :</strong> Île-de-France<br />
             <strong>🗓️ Période :</strong> Septembre 2025 → Août 2027 (24 mois)<br />
@@ -46,20 +49,20 @@ const Home: React.FC<HomeProps> = ({ id }) => {
           </div>
 
           <div className="flex justify-center gap-4 mb-8">
-            <a href="#" className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
-              <Github size={24} />
+            <a href="https://github.com/mrbaores" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-gray-100 hover:bg-violet-100 dark:bg-slate-800 dark:hover:bg-violet-900/40 transition-colors hover:text-violet-600 dark:hover:text-violet-400 border border-gray-200 dark:border-gray-700">
+              <Github size={22} />
             </a>
-            <a href="#" className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
-              <Linkedin size={24} />
+            <a href="https://www.linkedin.com/in/mohamed-adem-bouremani-ba7a88330/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-gray-100 hover:bg-violet-100 dark:bg-slate-800 dark:hover:bg-violet-900/40 transition-colors hover:text-violet-600 dark:hover:text-violet-400 border border-gray-200 dark:border-gray-700">
+              <Linkedin size={22} />
             </a>
-            <a href="#contact" className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors">
-              <Mail size={24} />
+            <a href="#contact" className="p-3 rounded-full bg-gray-100 hover:bg-violet-100 dark:bg-slate-800 dark:hover:bg-violet-900/40 transition-colors hover:text-violet-600 dark:hover:text-violet-400 border border-gray-200 dark:border-gray-700">
+              <Mail size={22} />
             </a>
           </div>
           <div className="flex justify-center gap-4">
             <a 
               href="#projets" 
-              className="btn btn-primary"
+              className="btn btn-primary text-base px-6 py-3"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' });
@@ -69,7 +72,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
             </a>
             <a 
               href="#contact" 
-              className="btn btn-secondary"
+              className="btn btn-secondary text-base px-6 py-3"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -88,7 +91,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
             }}
             aria-label="Défiler vers le bas"
           >
-            <ChevronDown size={32} className="text-gray-400 dark:text-gray-500" />
+            <ChevronDown size={32} className="text-violet-400 dark:text-violet-500" />
           </a>
         </div>
       </div>
